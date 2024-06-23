@@ -1,0 +1,255 @@
+Task1))
+CODE
+^^^^
+
+class Movie{
+    constructor(title,studio,rating="PG")
+    {
+        this.title=title;
+        this.studio=studio;
+        this.rating=rating;
+
+    }
+
+    static getPG(films){
+           let Arr=[];
+           for(var i=0;i<films.length;i++)
+            {
+                if(films[i].rating=="PG")
+                    {
+                        Arr.push(films[i].title);
+                    }
+            }
+           return Arr;
+    }
+
+    getDetails()
+    {
+        console.log(this.rating);
+    }
+
+}
+
+let CasinoRoyale=new Movie("Casino Royale","Eon Productions","PG­13");
+let Ko=new Movie("Ko","RS Infotainment","PG");  //PG
+let Ayan=new Movie("Ayan","AVM","PG");          //PG        
+let SooriyaVamsam=new Movie("SooriyaVamsam","AVM","PG13");
+let PanchaThanthiram=new Movie("PanchaThanthiram","AVM","PG13");
+let Singam=new Movie("Singam","SunPictures","A+");
+let Saamy=new Movie("Saamy","StudioGreen","A+");
+let SeethaRamam=new Movie("SeethaRamam","AVM");  //Default PG
+
+let films=[CasinoRoyale,Ko,Ayan,SooriyaVamsam,PanchaThanthiram,Singam,Saamy,SeethaRamam];
+
+let PGmovies=Movie.getPG(films);
+console.log("Movies With Rating PG");
+console.log("*********************")
+for(i=0;i<PGmovies.length;i++)
+    {
+        console.log((i+1)+"."+PGmovies[i]);
+    }
+
+
+OUTPUT
+^^^^^^
+
+Movies With Rating PG
+*********************
+1.Ko
+2.Ayan
+3.SeethaRamam
+
+Task2))
+
+CODE
+^^^^
+class Circle{
+    constructor(radius=1.0,color="red")
+    {
+            this.radius=radius;
+            this.color=color;
+    }
+    Circle()
+    { }
+    Circle(radius)
+    { }
+    Circle(radius,color)
+    { }
+    getRadius()
+    {
+        return this.radius;
+    }
+    setRadius(radius)
+    {
+        this.radius=radius;
+    }
+    getColor()
+    {
+        return this.color;
+    }
+    setColor(color)
+    {
+        this.color=color;
+    }
+    toString()
+    {
+        return ("Circle[radius = " +this.radius+", Color = "+this.color+"]");
+    }
+    getArea()
+    {
+        return Number(Math.PI*this.radius*this.radius);
+    }
+    getCircumference()
+    {
+       return Number(2*Math.PI*this.radius);
+    }
+
+}
+
+const Cir1=new Circle(5,"blue");
+let Str=Cir1.toString();
+let Radius=Cir1.getRadius();
+let Color=Cir1.getColor();
+let Area=Cir1.getArea();
+let Circum=Cir1.getCircumference();
+console.log(Str);
+console.log("Radius = "+Radius);
+console.log("Color = "+Color);
+console.log("Area of the Circle = "+Area);
+console.log("Circumference of the Circle= "+Circum);
+
+const Cir2=new Circle();        //This object created to show the result of default values
+
+Str=Cir2.toString();
+Radius=Cir2.getRadius();
+Color=Cir2.getColor();
+Area=Cir2.getArea();
+Circum=Cir2.getCircumference();
+
+console.log(Str);
+console.log("Radius = "+Radius);
+console.log("Color = "+Color);
+console.log("Area of the Circle = "+Area);
+console.log("Circumference of the Circle= "+Circum);
+
+OUTPUT
+^^^^^^
+Circle[radius = 5, Color = blue]
+Radius = 5
+Color = blue
+Area of the Circle = 78.53981633974483
+Circumference of the Circle= 31.41592653589793
+Circle[radius = 1, Color = red]
+Radius = 1
+Color = red
+Area of the Circle = 3.141592653589793
+Circumference of the Circle= 6.283185307179586
+
+Task3))
+
+CODE
+^^^^
+
+class Person{
+    constructor(name,gender,dob,contactno,address,email,aadharno,panno,qualification,height,weight,skintone,maritalstatus)
+    {
+        this.name=name;
+        this.gender=gender;
+        this.dob=dob;
+        this.contactno=contactno;
+        this.address=address;
+        this.email=email;
+        this.aadharno=aadharno;
+        this.panno=panno;
+        this.qualification=qualification;
+        this.height=height;
+        this.weight=weight;
+        this.skintone=skintone;
+        this.maritalstatus=maritalstatus;
+        
+    }
+
+    PrintOfficialDetails()
+    {
+        console.log("Official Details")
+        console.log("****************")
+        console.log("Name = "+this.name)
+        console.log("Gender = "+this.gender)
+        console.log("DOB = "+this.dob)
+        console.log("Phone = "+this.contactno)
+        console.log("Address = "+this.address)
+        console.log("Email = "+this.email)
+        console.log("AadharNo = "+this.aadharno)
+        console.log("PAN No = "+this.panno)
+        console.log("Qualification = "+this.qualification)
+    }
+
+    PrintPersonalDetails()
+    {
+        console.log("Personal Details")
+        console.log("****************")
+        console.log("Height = "+this.height)
+        console.log("Weight = "+this.weight)
+        console.log("SkinTone = "+this.skintone)
+        console.log("MaritalStatus = "+this.maritalstatus)
+            }
+
+}
+
+const Pavi=new Person("Pavithra Balakrishnan","Female","31-01-1994","9750954424","481,ChinnaThottam,PollachiRoad,Palladam-641664","b.pavithra444@gmail.com","649167544420","DMW1378B","M.Sc(CS)","160cm","49","MediumTone","Married");
+Pavi.PrintOfficialDetails();
+Pavi.PrintPersonalDetails();
+
+OUTPUT
+^^^^^^
+
+Official Details
+****************
+Name = Pavithra Balakrishnan
+Gender = Female
+DOB = 31-01-1994
+Phone = 9750954424
+Address = 481,ChinnaThottam,PollachiRoad,Palladam-641664
+Email = b.pavithra444@gmail.com
+AadharNo = 649167544420
+PAN No = DMW1378B
+Qualification = M.Sc(CS)
+Personal Details
+****************
+Height = 160cm
+Weight = 49
+SkinTone = MediumTone
+MaritalStatus = Married
+
+Task4))
+
+CODE
+^^^^
+
+class Uber{
+    constructor(km,PricePerkm=50,waitingCharge=0)
+    {
+        this.km=km;
+        this.PricePerkm=PricePerkm;
+        this.waitingCharge=waitingCharge;
+    }
+
+getRidePrice()
+{
+    return (this.km*this.PricePerkm)+this.waitingCharge;
+}
+
+}
+
+let Ride1=new Uber(0.500);
+let rideRate=Ride1.getRidePrice();
+console.log("Ride1 Rate = "+rideRate);
+
+let Ride2=new Uber(27,60,200);
+rideRate=Ride2.getRidePrice();
+console.log("Ride2 Rate = "+rideRate);
+
+OUTPUT
+^^^^^^
+Ride1 Rate = 25
+Ride2 Rate = 1820
